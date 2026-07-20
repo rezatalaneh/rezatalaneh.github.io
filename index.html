@@ -1,223 +1,443 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Academic Homepage</title>
-    <!-- استفاده از فونت مدرن و خوانا -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #34495e;
-            --accent-color: #3498db;
-            --bg-color: #ffffff;
-            --text-color: #333333;
-            --light-gray: #f9f9f9;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reza Talaneh | Mechanical Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text: #1f1f1f;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --blue: #2563eb;
+      --bg: #ffffff;
+      --soft: #f8fafc;
+      --max: 1120px;
+    }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 0;
-        }
+    * { box-sizing: border-box; }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
 
-        /* Header / Profile Section */
-        header {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            margin-bottom: 60px;
-        }
+    a { color: inherit; text-decoration: none; }
 
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--light-gray);
-        }
+    .page {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
 
-        .profile-info h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            color: var(--primary-color);
-        }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 18px;
+      margin-bottom: 58px;
+    }
 
-        .profile-info p {
-            font-size: 1.1rem;
-            color: var(--secondary-color);
-            margin: 5px 0;
-        }
+    .brand {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      white-space: nowrap;
+    }
 
-        .social-links {
-            margin-top: 15px;
-        }
+    .hero {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 72px;
+      align-items: start;
+    }
 
-        .social-links a {
-            text-decoration: none;
-            color: var(--accent-color);
-            margin-right: 15px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
+    .profile {
+      text-align: center;
+      position: sticky;
+      top: 24px;
+    }
 
-        .social-links a:hover {
-            text-decoration: underline;
-        }
+    .avatar {
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 24px;
+      background: #eef2f7;
+      border: 1px solid var(--line);
+    }
 
-        /* Main Content Sections */
-        section {
-            margin-bottom: 40px;
-        }
+    .name {
+      font-size: 38px;
+      line-height: 1.1;
+      margin: 0 0 10px;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+    }
 
-        h2 {
-            border-bottom: 2px solid var(--light-gray);
-            padding-bottom: 8px;
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
+    .title {
+      margin: 0 0 10px;
+      font-size: 20px;
+      color: var(--muted);
+      font-weight: 400;
+    }
 
-        .bio-text {
-            text-align: justify;
-        }
+    .company {
+      margin: 0 0 22px;
+      font-size: 18px;
+      color: #8b8f98;
+      font-weight: 400;
+    }
 
-        /* Lists Styles */
-        ul {
-            list-style: none;
-            padding: 0;
-        }
+    .meta {
+      display: grid;
+      gap: 10px;
+      margin: 18px 0 22px;
+      color: var(--muted);
+      font-size: 15px;
+    }
 
-        li {
-            margin-bottom: 12px;
-        }
+    .meta a {
+      color: var(--blue);
+      word-break: break-word;
+    }
 
-        .item-title {
-            font-weight: 600;
-            display: block;
-        }
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
 
-        .item-sub {
-            color: var(--secondary-color);
-            font-size: 0.9rem;
-        }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      height: 42px;
+      padding: 0 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 500;
+      transition: border-color .15s ease, color .15s ease, background .15s ease;
+    }
 
-        /* Publication Specific */
-        .pub-item {
-            margin-bottom: 20px;
-            padding-left: 15px;
-            border-left: 3px solid var(--accent-color);
-        }
+    .btn:hover {
+      border-color: #cbd5e1;
+      background: var(--soft);
+    }
 
-        footer {
-            margin-top: 80px;
-            padding-top: 20px;
-            border-top: 1px solid var(--light-gray);
-            text-align: center;
-            font-size: 0.8rem;
-            color: #888;
-        }
+    .btn.primary {
+      background: var(--blue);
+      color: #fff;
+      border-color: var(--blue);
+    }
 
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-            }
-            .profile-img {
-                width: 150px;
-                height: 150px;
-            }
-        }
-    </style>
+    .btn.primary:hover {
+      background: #1d4ed8;
+      border-color: #1d4ed8;
+    }
+
+    .content h1 {
+      font-size: 52px;
+      line-height: 1.05;
+      margin: 0 0 16px;
+      font-weight: 500;
+      letter-spacing: -0.05em;
+    }
+
+    .summary {
+      max-width: 760px;
+      font-size: 17px;
+      line-height: 1.75;
+      color: #374151;
+      margin: 0 0 42px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 46px;
+      margin-bottom: 36px;
+    }
+
+    .section {
+      margin-bottom: 36px;
+    }
+
+    .section h2 {
+      font-size: 24px;
+      margin: 0 0 16px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    ul.clean {
+      margin: 0;
+      padding-left: 18px;
+      color: #374151;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .card-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .entry {
+      padding: 0 0 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .entry:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .entry-title {
+      display: block;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .entry-sub {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .pub {
+      padding-left: 14px;
+      border-left: 2px solid var(--blue);
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .footer {
+      margin-top: 56px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 920px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+
+      .profile {
+        position: static;
+        text-align: left;
+      }
+
+      .avatar {
+        margin-left: 0;
+      }
+
+      .actions {
+        justify-content: flex-start;
+      }
+
+      .content h1 {
+        font-size: 42px;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
+      .content h1 {
+        font-size: 34px;
+      }
+
+      .name {
+        font-size: 32px;
+      }
+
+      .avatar {
+        width: 200px;
+        height: 200px;
+      }
+
+      .title, .company {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand">Reza Talaneh</div>
+      <div class="small">Mechanical Engineer | Product Development</div>
+    </header>
 
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <img src="profile.jpg" alt="Your Name" class="profile-img">
-            <div class="profile-info">
-                <h1>Reza Talaneh</h1>
-                <p>Mechanical Engineer & Researcher</p>
-                <p>PhD Candidate in [Your Field]</p>
-                <p><em>[University Name / Institute]</em></p>
-                
-                <div class="social-links">
-                    <a href="mailto:your-email@example.com">Email</a>
-                    <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
-                    <a href="https://github.com/yourusername">GitHub</a>
-                    <a href="https://scholar.google.com/yourprofile">Google Scholar</a>
-                </div>
-            </div>
-        </header>
+    <main class="hero">
+      <aside class="profile">
+        <img class="avatar" src="profile.jpg" alt="Reza Talaneh profile photo" />
 
-        <!-- Biography -->
-        <section id="about">
-            <h2>About Me</h2>
-            <p class="bio-text">
-                I am a Mechanical Engineer with over 10 years of experience in design and FEA. 
-                My research interests lie at the intersection of <strong>Shape Memory Alloys (SMAs)</strong>, 
-                <strong>Soft Robotics</strong>, and <strong>Biomechanics</strong>. 
-                Currently, I am focusing on [Briefly mention your PhD goal or current project].
-            </p>
-        </section>
+        <h2 class="name">REZA TALANEH</h2>
+        <p class="title">Mechanical Engineer | Product Development</p>
+        <p class="company">Engineering Manager, ABCHECK CO</p>
 
-        <!-- Research Interests -->
-        <section id="interests">
+        <div class="meta">
+          <div>Mahmudabad, Iran</div>
+          <div><a href="mailto:rezatalaneh@gmail.com">rezatalaneh@gmail.com</a></div>
+          <div><a href="tel:+989117440089">+989117440089</a></div>
+          <div><a href="https://linkedin.com/in/reza-talaneh" target="_blank" rel="noreferrer">linkedin.com/in/reza-talaneh</a></div>
+          <div><a href="https://rebrand.ly/rayportfolio" target="_blank" rel="noreferrer">Portfolio</a></div>
+        </div>
+
+        <div class="actions">
+          <a class="btn primary" href="Talaneh-CV.pdf" download>Download CV PDF</a>
+          <a class="btn" href="https://linkedin.com/in/reza-talaneh" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </aside>
+
+      <section class="content">
+        <h1>Biography</h1>
+        <p class="summary">
+          Mechanical Engineer with more than 10 years of experience in industrial product development,
+          manufacturing improvement, mechanical design, product validation, and engineering leadership.
+          Currently Engineering Manager at ABCHECK CO, with a research direction toward doctoral study in
+          product development, production systems, and sustainable manufacturing. Interests include finite
+          element analysis, design for manufacturing, data-informed engineering decision-making, and robust
+          product-development methodologies.
+        </p>
+
+        <div class="grid-2">
+          <div class="section">
             <h2>Research Interests</h2>
-            <ul>
-                <li>• Constitutive modelling of Shape Memory Alloys</li>
-                <li>• Finite Element Analysis (FEA) & Mechanical Design</li>
-                <li>• Bio-robotics and Soft Actuators</li>
-                <li>• Advanced Production Development</li>
+            <ul class="clean">
+              <li>Product and Production Development</li>
+              <li>Sustainable Product Realisation</li>
+              <li>Engineering Performance Indicators</li>
+              <li>Product Development Methodologies</li>
+              <li>Data-Informed Decision-Making</li>
+              <li>Design for Manufacturing</li>
+              <li>Finite Element Analysis</li>
             </ul>
-        </section>
+          </div>
 
-        <!-- Education -->
-        <section id="education">
+          <div class="section">
             <h2>Education</h2>
-            <ul>
-                <li>
-                    <span class="item-title">MSc in Mechanical Engineering</span>
-                    <span class="item-sub">Babol Noshirvani University of Technology | 201x - 201x</span>
-                </li>
-                <li>
-                    <span class="item-title">BSc in Mechanical Engineering</span>
-                    <span class="item-sub">Babol Noshirvani University of Technology | 200x - 201x</span>
-                </li>
-            </ul>
-        </section>
+            <div class="card-list">
+              <div class="entry">
+                <span class="entry-title">MSc in Applied Mechanical Engineering</span>
+                <span class="entry-sub">Babol Noshirvani University of Technology, 2013-2016<br>GPA: 18.45/20, ranked 2nd among 24 students</span>
+              </div>
+              <div class="entry">
+                <span class="entry-title">BSc in Mechanical Engineering</span>
+                <span class="entry-sub">Babol Noshirvani University of Technology, 2009-2013<br>GPA: 17.33/20, ranked 2nd among 63 students</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <!-- Publications / Projects (Optional) -->
-        <section id="publications">
+        <div class="grid-2">
+          <div class="section">
+            <h2>Selected Experience</h2>
+            <div class="card-list">
+              <div class="entry">
+                <span class="entry-title">Engineering Manager, ABCHECK CO</span>
+                <span class="entry-sub">Oct 2017 - Present<br>Leads multidisciplinary product-development and manufacturing-improvement teams.</span>
+              </div>
+              <div class="entry">
+                <span class="entry-title">Design and Development Manager</span>
+                <span class="entry-sub">Sep 2016 - Sep 2017<br>Led engineering design, prototype development, testing, and validation.</span>
+              </div>
+              <div class="entry">
+                <span class="entry-title">Research and Development Supervisor</span>
+                <span class="entry-sub">Sep 2013 - Sep 2016<br>Supervised new-product development and manufacturing-process improvement.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
             <h2>Selected Projects</h2>
-            <div class="pub-item">
-                <span class="item-title">Project Title or Publication Name</span>
-                <span class="item-sub">Conference/Journal Name, Year. <a href="#" style="color: var(--accent-color); text-decoration: none;">[Link]</a></span>
+            <div class="card-list">
+              <div class="entry">
+                <span class="entry-title">Blown Film Dual-Lip Air Ring</span>
+                <span class="entry-sub">Industrial product-development project</span>
+              </div>
+              <div class="entry">
+                <span class="entry-title">Two-Stage Parallel-Shaft Gearbox Design</span>
+                <span class="entry-sub">Mechanical design and validation</span>
+              </div>
+              <div class="entry">
+                <span class="entry-title">Blueprint-to-CAD Reconstruction & Structural FEA</span>
+                <span class="entry-sub">CAD reconstruction and finite-element analysis</span>
+              </div>
             </div>
-            <div class="pub-item">
-                <span class="item-title">Development of Industrial Blown Polymer Films</span>
-                <span class="item-sub">ABCHECK Co. | Industrial Project</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Selected Publications</h2>
+          <div class="card-list">
+            <div class="entry pub">
+              <span class="entry-title">Analytical and Finite Element Study of Superelasticity Behavior and Shape Memory Effect of SMA Thin-Walled Cylinders under Torsional Loading</span>
+              <span class="entry-sub">Proceedings of the 23rd International Mechanical Engineering Conference (ISME2015)</span>
             </div>
-        </section>
+            <div class="entry pub">
+              <span class="entry-title">Analytical and Numerical Modeling of Pseudoelastic and Shape Memory Behavior of Shape Memory Alloys under Uniaxial Tension</span>
+              <span class="entry-sub">First National Conference on Applied Mechanics</span>
+            </div>
+          </div>
+        </div>
 
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2024 Reza Talaneh. Powered by GitHub Pages.</p>
-        </footer>
-    </div>
+        <div class="section">
+          <h2>Skills</h2>
+          <p class="small">
+            Product Development, Mechanical Design, CAD, DFM, FEA, Engineering KPIs, Data-Informed Decision-Making,
+            Cross-Functional Collaboration, Engineering Leadership, Agile, Scrum, Lean, SolidWorks, ANSYS, MATLAB,
+            Power BI, Azure DevOps
+          </p>
+        </div>
 
+        <div class="section">
+          <h2>Languages & Membership</h2>
+          <p class="small">
+            English: PTE Academic Overall 90<br>
+            Persian: Native<br>
+            Professional membership: International Association of Engineers (IAENG)
+          </p>
+        </div>
+
+        <div class="footer">
+          © Reza Talaneh. Hosted on GitHub Pages.
+        </div>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
