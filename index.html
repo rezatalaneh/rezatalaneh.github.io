@@ -6,136 +6,557 @@
   <title>Reza Talaneh | Mechanical Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <!-- اضافه شدن FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    :root {
-      --text: #1f1f1f; --muted: #6b7280; --line: #e5e7eb;
-      --blue: #2563eb; --bg: #ffffff; --soft: #f8fafc; --max: 1120px;
+    :root{
+      --bg:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --soft:#f8fafc;
+      --blue:#2563eb;
+      --blue-2:#1d4ed8;
+      --max:1180px;
     }
-    * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: "Inter", sans-serif; }
-    a { color: inherit; text-decoration: none; }
-    .page { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; padding: 28px 0 56px; }
-    .topbar { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 58px; }
-    .brand { font-size: 22px; font-weight: 700; }
-    .hero { display: grid; grid-template-columns: 320px 1fr; gap: 72px; align-items: start; }
-    .profile { position: sticky; top: 24px; }
-    .avatar { width: 240px; height: 240px; border-radius: 50%; object-fit: cover; object-position: center 20%; margin: 0 auto 24px; display: block; border: 1px solid var(--line); }
-    .name { font-size: 38px; line-height: 1.1; margin: 0 0 10px; font-weight: 600; }
-    .title { color: var(--muted); margin: 0 0 22px; }
-    /* استایل آیکون‌ها */
-    .meta { display: grid; gap: 14px; margin: 18px 0 22px; color: var(--text); font-size: 15px; }
-    .meta a { display: flex; align-items: center; gap: 12px; color: var(--text); }
-    .meta a i { width: 20px; color: var(--blue); }
-    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
-    .btn { display: inline-flex; align-items: center; gap: 8px; height: 42px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line); font-size: 14px; font-weight: 500; }
-    .btn.primary { background: var(--blue); color: #fff; border-color: var(--blue); }
-    .summary { text-align: justify; font-size: 17px; line-height: 1.75; color: #374151; margin: 0 0 42px; }
-    
-    /* استایل بخش پروژه‌ها */
-    .project-link { display: flex; align-items: center; gap: 16px; padding: 12px; border-radius: 8px; transition: background 0.2s; }
-    .project-link:hover { background: var(--soft); }
-    .project-thumb { width: 60px; height: 60px; border-radius: 6px; background: #eee; object-fit: cover; border: 1px solid var(--line); }
-    
-    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 46px; margin-bottom: 36px; }
-    .section { margin-bottom: 36px; }
-    .section h2 { font-size: 24px; margin: 0 0 16px; font-weight: 700; }
-    .entry { padding: 0 0 14px; border-bottom: 1px solid var(--line); }
-    .entry-title { display: block; font-size: 16px; font-weight: 600; margin-bottom: 4px; }
-    .entry-sub { display: block; color: var(--muted); font-size: 14px; }
-    .footer { margin-top: 56px; border-top: 1px solid var(--line); padding-top: 18px; color: var(--muted); font-size: 13px; }
-    
-    @media (max-width: 920px) { .hero { grid-template-columns: 1fr; } .profile { position: static; } }
+
+    *{box-sizing:border-box;}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:"Inter",sans-serif;}
+    a{text-decoration:none;color:inherit;}
+    ul{margin:0;padding-left:20px;}
+    li{margin:0 0 8px 0;}
+
+    .page{
+      width:min(var(--max), calc(100% - 48px));
+      margin:0 auto;
+      padding:28px 0 56px;
+    }
+
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      border-bottom:1px solid var(--line);
+      padding-bottom:18px;
+      margin-bottom:44px;
+    }
+
+    .brand{
+      font-size:22px;
+      font-weight:800;
+      letter-spacing:0;
+    }
+
+    .brand-sub{
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:320px 1fr;
+      gap:64px;
+      align-items:start;
+    }
+
+    .profile{
+      position:sticky;
+      top:24px;
+    }
+
+    .avatar{
+      width:240px;
+      height:240px;
+      border-radius:50%;
+      object-fit:cover;
+      object-position:center 20%;
+      display:block;
+      margin:0 auto 22px;
+      border:1px solid var(--line);
+      background:var(--soft);
+    }
+
+    .name{
+      margin:0 0 8px;
+      font-size:38px;
+      line-height:1.05;
+      font-weight:800;
+      letter-spacing:0;
+    }
+
+    .title{
+      margin:0 0 10px;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.5;
+    }
+
+    .meta{
+      display:grid;
+      gap:12px;
+      margin:18px 0 22px;
+      font-size:15px;
+    }
+
+    .meta a{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      color:var(--text);
+    }
+
+    .meta i{
+      width:18px;
+      color:var(--blue);
+      text-align:center;
+      flex:0 0 18px;
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      height:42px;
+      padding:0 16px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      font-size:14px;
+      font-weight:600;
+      background:#fff;
+      transition:background .2s ease, border-color .2s ease, color .2s ease;
+      white-space:nowrap;
+    }
+
+    .btn:hover{background:var(--soft);}
+    .btn.primary{
+      background:var(--blue);
+      color:#fff;
+      border-color:var(--blue);
+    }
+    .btn.primary:hover{background:var(--blue-2);border-color:var(--blue-2);}
+
+    .content{min-width:0;}
+
+    .summary{
+      text-align:justify;
+      font-size:16px;
+      line-height:1.8;
+      color:#374151;
+      margin:0 0 34px;
+      max-width:72ch;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:38px;
+      margin-bottom:30px;
+    }
+
+    .section{
+      margin-bottom:30px;
+    }
+
+    .section h2{
+      margin:0 0 14px;
+      font-size:22px;
+      line-height:1.2;
+      font-weight:800;
+      letter-spacing:0;
+    }
+
+    .section-note{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .entry{
+      padding:0 0 14px;
+      border-bottom:1px solid var(--line);
+      margin-bottom:14px;
+    }
+
+    .entry:last-child{
+      margin-bottom:0;
+    }
+
+    .entry-title{
+      display:block;
+      font-size:16px;
+      line-height:1.45;
+      font-weight:700;
+      margin-bottom:4px;
+    }
+
+    .entry-sub{
+      display:block;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.55;
+    }
+
+    .entry-body{
+      margin-top:8px;
+      color:#374151;
+      font-size:14px;
+      line-height:1.65;
+    }
+
+    .link-card{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      padding:12px;
+      border-radius:8px;
+      border:1px solid var(--line);
+      transition:background .2s ease, border-color .2s ease;
+      margin-bottom:12px;
+      background:#fff;
+    }
+
+    .link-card:hover{
+      background:var(--soft);
+      border-color:#d1d5db;
+    }
+
+    .project-thumb{
+      width:64px;
+      height:64px;
+      border-radius:6px;
+      object-fit:cover;
+      object-position:center;
+      border:1px solid var(--line);
+      background:#eee;
+      flex:0 0 64px;
+    }
+
+    .link-card .entry-title{margin-bottom:2px;}
+    .link-card .entry-sub{margin-top:0;}
+
+    .subgrid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:18px;
+    }
+
+    .chip-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:10px;
+    }
+
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      min-height:34px;
+      padding:0 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:#fff;
+      font-size:13px;
+      color:#374151;
+    }
+
+    .footer{
+      margin-top:44px;
+      border-top:1px solid var(--line);
+      padding-top:16px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr;}
+      .profile{position:static;}
+      .avatar{width:220px;height:220px;}
+      .grid-2,.subgrid{grid-template-columns:1fr;}
+    }
+
+    @media (max-width: 560px){
+      .page{width:min(var(--max), calc(100% - 28px));}
+      .topbar{flex-direction:column;align-items:flex-start;}
+      .name{font-size:32px;}
+      .summary{font-size:15px;line-height:1.75;text-align:left;}
+    }
   </style>
 </head>
 <body>
   <div class="page">
     <header class="topbar">
-      <div class="brand">Reza Talaneh</div>
-      <div class="small">Mechanical Engineer</div>
+      <div>
+        <div class="brand">Reza Talaneh</div>
+        <div class="brand-sub">Mechanical Engineer | Product Development</div>
+      </div>
+      <div class="brand-sub">Academic / Personal Website</div>
     </header>
 
     <main class="hero">
       <aside class="profile">
         <img class="avatar" src="profile.jpg" alt="Reza Talaneh" />
-        <h2 class="name">REZA TALANEH</h2>
+
+        <h1 class="name">REZA TALANEH</h1>
+        <p class="title">Mechanical Engineer | Product Development</p>
         <p class="title">Engineering Manager, ABCHECK CO</p>
 
         <div class="meta">
-          <a href="mailto:rezatalaneh@gmail.com"><i class="fa-solid fa-envelope"></i> rezatalaneh@gmail.com</a>
-          <a href="tel:+989117440089"><i class="fa-solid fa-phone"></i> +989117440089</a>
-          <a href="https://linkedin.com/in/reza-talaneh"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-          <a href="https://rebrand.ly/rayportfolio"><i class="fa-solid fa-briefcase"></i> Portfolio</a>
+          <a href="mailto:rezatalaneh@gmail.com"><i class="fa-solid fa-envelope"></i><span>rezatalaneh@gmail.com</span></a>
+          <a href="tel:+989117440089"><i class="fa-solid fa-phone"></i><span>+989117440089</span></a>
+          <a href="https://linkedin.com/in/reza-talaneh" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
+          <a href="https://rebrand.ly/rayportfolio" target="_blank" rel="noreferrer"><i class="fa-solid fa-briefcase"></i><span>Portfolio</span></a>
         </div>
 
         <div class="actions">
-          <a class="btn primary" href="Talaneh-CV.pdf" download>Download CV</a>
+          <a class="btn primary" href="Talaneh-CV.pdf" download><i class="fa-solid fa-file-arrow-down"></i>Download CV</a>
         </div>
       </aside>
 
       <section class="content">
         <p class="summary">
           Mechanical Engineer with more than 10 years of experience in industrial product development,
-          manufacturing improvement, mechanical design, product validation, and engineering leadership.
-          Currently Engineering Manager at ABCHECK CO, with a research direction toward doctoral study in
-          product development, production systems, and sustainable manufacturing. Interests include finite
-          element analysis, design for manufacturing, data-informed engineering decision-making, and robust
-          product-development methodologies.
+          manufacturing improvement, and engineering leadership in the blown plastic film industry.
+          My background includes mechanical design, product validation, design for manufacturing,
+          and cross-functional engineering collaboration. I am interested in structured product development,
+          engineering performance indicators, and data-informed engineering decision-making, and I am pursuing
+          doctoral research opportunities in product development, production systems, and sustainable manufacturing.
         </p>
 
         <div class="grid-2">
-          <div class="section">
+          <section class="section">
             <h2>Research Interests</h2>
-            <ul style="padding-left: 20px;">
+            <ul>
               <li>Product and Production Development</li>
               <li>Sustainable Product Realisation</li>
               <li>Engineering Performance Indicators</li>
+              <li>Product Development Methodologies</li>
               <li>Data-Informed Decision-Making</li>
-              <li>Design for Manufacturing</li>
+              <li>Design for Manufacturing (DFM)</li>
+              <li>Finite Element Analysis</li>
             </ul>
-          </div>
-          <div class="section">
+          </section>
+
+          <section class="section">
             <h2>Education</h2>
-            <div class="entry"><span class="entry-title">MSc in Applied Mechanical Engineering</span><span class="entry-sub">Babol Noshirvani University, 2013-2016</span></div>
-            <div class="entry"><span class="entry-title">BSc in Mechanical Engineering</span><span class="entry-sub">Babol Noshirvani University, 2009-2013</span></div>
-          </div>
+            <div class="entry">
+              <span class="entry-title">Babol Noshirvani University of Technology</span>
+              <span class="entry-sub">Babol, Mazandaran, Iran</span>
+              <span class="entry-sub">The Engineering Rank 2026: 501–600</span>
+            </div>
+            <div class="entry">
+              <span class="entry-title">MSc in Applied Mechanical Engineering</span>
+              <span class="entry-sub">Sep 2013 – Feb 2016</span>
+              <span class="entry-sub">GPA: 18.45/20 | Ranked 2nd among 24 students</span>
+              <div class="entry-body">
+                Thesis: “Analytical and finite element study of super elasticity behavior and shape memory effect of a Shape memory alloy thick-walled cylinder”
+              </div>
+            </div>
+            <div class="entry">
+              <span class="entry-title">BSc in Mechanical Engineering</span>
+              <span class="entry-sub">Sep 2009 – Sep 2013</span>
+              <span class="entry-sub">GPA: 17.33/20 | Ranked 2nd among 63 students</span>
+              <div class="entry-body">
+                Thesis: “Analysis of a sandwich beam with a viscoelastic core using ANSYS”
+              </div>
+            </div>
+          </section>
         </div>
 
-        <div class="section">
+        <section class="section">
           <h2>Selected Publications</h2>
-          <div class="entry" style="border-left: 3px solid var(--blue); padding-left: 15px;">
-            <span class="entry-title">Analytical and Finite Element Study of Superelasticity Behavior of SMA Cylinders</span>
-            <span class="entry-sub">ISME2015 Conference</span>
-          </div>
-        </div>
-        
+          <p class="section-note">Add the paper or conference link in each item. If a DOI or PDF exists, use it directly.</p>
+
+          <a class="link-card" href="#" target="_blank" rel="noreferrer">
+            <div style="width:64px;height:64px;border-radius:6px;border:1px solid var(--line);background:linear-gradient(180deg,#f8fafc,#eef2ff);display:flex;align-items:center;justify-content:center;flex:0 0 64px;">
+              <i class="fa-solid fa-file-lines" style="font-size:22px;color:var(--blue);"></i>
+            </div>
+            <div>
+              <span class="entry-title">Analytical and Finite Element Study of Superelasticity Behavior and Shape Memory Effect of SMA Thin-Walled Cylinders under Torsional Loading</span>
+              <span class="entry-sub">Proceedings of the 23rd International Mechanical Engineering Conference (ISME2015), Tehran, Iran</span>
+            </div>
+          </a>
+
+          <a class="link-card" href="#" target="_blank" rel="noreferrer">
+            <div style="width:64px;height:64px;border-radius:6px;border:1px solid var(--line);background:linear-gradient(180deg,#f8fafc,#eef2ff);display:flex;align-items:center;justify-content:center;flex:0 0 64px;">
+              <i class="fa-solid fa-file-lines" style="font-size:22px;color:var(--blue);"></i>
+            </div>
+            <div>
+              <span class="entry-title">Analytical and Numerical Modeling of Pseudoelastic and Shape Memory Behavior of Shape Memory Alloys under Uniaxial Tension</span>
+              <span class="entry-sub">First National Conference on Applied Mechanics, Tabriz, Iran</span>
+            </div>
+          </a>
+        </section>
+
         <div class="grid-2">
-          <div class="section">
-            <h2>Professional Experience</h2>
-            <div class="entry"><span class="entry-title">Engineering Manager, ABCHECK CO</span><span class="entry-sub">Oct 2017 - Present</span></div>
-            <div class="entry"><span class="entry-title">Design and Development Manager</span><span class="entry-sub">2016 - 2017</span></div>
+          <section class="section">
+            <h2>Teaching Experience</h2>
+            <div class="entry">
+              <span class="entry-title">Teaching Assistant – Mechanics of Materials Laboratory</span>
+              <span class="entry-sub">Babol Noshirvani University of Technology | Feb 2014 – Feb 2015</span>
+              <div class="entry-body">
+                Assisted in delivering more than 20 undergraduate Mechanics of Materials laboratory sessions, supporting experimental instruction and student learning.
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2>Selected Projects</h2>
+            <p class="section-note">Each project has its own link. Replace the placeholders with your Drive or page URLs.</p>
+
+            <a class="link-card" href="#" target="_blank" rel="noreferrer">
+              <img src="project1.jpg" class="project-thumb" alt="Blown Film Dual-Lip Air Ring">
+              <div>
+                <span class="entry-title">Blown Film Dual-Lip Air Ring</span>
+                <span class="entry-sub">Reverse-engineered and modeled an industrial dual-lip air ring used in blown film extrusion, emphasizing manufacturability and mechanical functionality.</span>
+              </div>
+            </a>
+
+            <a class="link-card" href="#" target="_blank" rel="noreferrer">
+              <img src="project2.jpg" class="project-thumb" alt="Two-Stage Parallel-Shaft Gearbox Design">
+              <div>
+                <span class="entry-title">Two-Stage Parallel-Shaft Gearbox Design</span>
+                <span class="entry-sub">Complete gearbox design including transmission calculations, shaft design, bearings selection, housing development, motion verification, and manufacturing drawings.</span>
+              </div>
+            </a>
+
+            <a class="link-card" href="#" target="_blank" rel="noreferrer">
+              <img src="project3.jpg" class="project-thumb" alt="Blueprint-to-CAD Reconstruction & Structural FEA">
+              <div>
+                <span class="entry-title">Blueprint-to-CAD Reconstruction & Structural FEA</span>
+                <span class="entry-sub">Reconstructed production-ready CAD models from engineering drawings and performed structural FEA to evaluate stress distribution and mechanical behavior.</span>
+              </div>
+            </a>
+
+            <a class="link-card" href="#" target="_blank" rel="noreferrer">
+              <img src="project4.jpg" class="project-thumb" alt="Sheet Metal Enclosure">
+              <div>
+                <span class="entry-title">Sheet Metal Enclosure</span>
+                <span class="entry-sub">Designed a manufacturing-ready enclosure applying sheet metal design principles, DFM, forming tools, ventilation design, and fabrication workflows.</span>
+              </div>
+            </a>
+          </section>
+        </div>
+
+        <section class="section">
+          <h2>Professional Experience</h2>
+
+          <div class="entry">
+            <span class="entry-title">ABCHECK CO</span>
+            <span class="entry-sub">Manufacturer of Agricultural & Industrial Plastic Blown Films | Mahmudabad, Mazandaran, Iran</span>
           </div>
 
-          <div class="section">
-            <h2>Selected Projects</h2>
-            <!-- لینک دار کردن پروژه‌ها -->
-            <a href="YOUR_GOOGLE_DRIVE_LINK_HERE" class="project-link">
-                <img src="project1.jpg" class="project-thumb">
-                <div>
-                    <span class="entry-title">Blown Film Dual-Lip Air Ring</span>
-                    <span class="entry-sub">Click to view on Drive</span>
-                </div>
-            </a>
-            <a href="YOUR_GOOGLE_DRIVE_LINK_HERE" class="project-link">
-                <img src="project2.jpg" class="project-thumb">
-                <div>
-                    <span class="entry-title">Gearbox Design</span>
-                    <span class="entry-sub">Click to view on Drive</span>
-                </div>
-            </a>
+          <div class="entry">
+            <span class="entry-title">Engineering Manager</span>
+            <span class="entry-sub">Oct 2017 – Present</span>
+            <div class="entry-body">
+              <ul>
+                <li>Led multidisciplinary engineering teams responsible for product development and manufacturing improvement of polymer film products.</li>
+                <li>Directed engineering initiatives to improve product performance, manufacturing efficiency, and engineering processes.</li>
+                <li>Coordinated design, production, quality, and management teams while monitoring engineering KPIs and project outcomes.</li>
+                <li>Supported engineering decision-making across product development projects through performance monitoring and cross-functional collaboration.</li>
+              </ul>
+            </div>
           </div>
+
+          <div class="entry">
+            <span class="entry-title">Design and Development Manager</span>
+            <span class="entry-sub">Sep 2016 – Sep 2017</span>
+            <div class="entry-body">
+              <ul>
+                <li>Led engineering design, prototype development, testing, and validation of polymer film products and manufacturing solutions.</li>
+                <li>Coordinated cross-functional product development activities from concept to implementation.</li>
+                <li>Evaluated customer requirements and market opportunities to support engineering innovation.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="entry">
+            <span class="entry-title">Research and Development Supervisor</span>
+            <span class="entry-sub">Sep 2013 – Sep 2016</span>
+            <div class="entry-body">
+              <ul>
+                <li>Supervised engineering activities for new product development and manufacturing process improvement.</li>
+                <li>Supported tooling, process optimization, product validation, and quality improvement initiatives.</li>
+                <li>Contributed to engineering solutions for improving productivity and product performance.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <div class="grid-2">
+          <section class="section">
+            <h2>Core Competencies</h2>
+
+            <div class="subgrid">
+              <div>
+                <div class="entry-sub" style="margin-bottom:10px;color:#111827;font-weight:700;">Engineering</div>
+                <div class="chip-list">
+                  <span class="chip">Product Development</span>
+                  <span class="chip">Mechanical Design</span>
+                  <span class="chip">CAD</span>
+                  <span class="chip">DFM</span>
+                  <span class="chip">FEA</span>
+                  <span class="chip">Engineering KPIs</span>
+                  <span class="chip">Data-Informed Decision-Making</span>
+                  <span class="chip">Cross-Functional Collaboration</span>
+                  <span class="chip">Engineering Leadership</span>
+                </div>
+              </div>
+
+              <div>
+                <div class="entry-sub" style="margin-bottom:10px;color:#111827;font-weight:700;">Methods</div>
+                <div class="chip-list">
+                  <span class="chip">Agile</span>
+                  <span class="chip">Scrum</span>
+                  <span class="chip">Lean</span>
+                </div>
+
+                <div class="entry-sub" style="margin:18px 0 10px;color:#111827;font-weight:700;">Software</div>
+                <div class="chip-list">
+                  <span class="chip">SolidWorks</span>
+                  <span class="chip">ANSYS</span>
+                  <span class="chip">MATLAB</span>
+                  <span class="chip">Power BI</span>
+                  <span class="chip">Azure DevOps</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2>Languages</h2>
+            <div class="entry">
+              <span class="entry-title">English</span>
+              <span class="entry-sub">PTE Academic: Overall 90</span>
+            </div>
+            <div class="entry">
+              <span class="entry-title">Persian</span>
+              <span class="entry-sub">Native</span>
+            </div>
+
+            <h2 style="margin-top:24px;">Professional Membership</h2>
+            <div class="entry">
+              <span class="entry-title">International Association of Engineers (IAENG)</span>
+            </div>
+
+            <h2 style="margin-top:24px;">Personal Interests</h2>
+            <div class="chip-list">
+              <span class="chip">Guitar</span>
+              <span class="chip">Reading</span>
+              <span class="chip">Cooking</span>
+              <span class="chip">Hiking</span>
+            </div>
+          </section>
         </div>
 
         <div class="footer">© Reza Talaneh. Hosted on GitHub Pages.</div>
