@@ -393,19 +393,24 @@
 
       .profile {
         position: static;
-        text-align: center;
+        text-align: center; /* قرار دادن متن‌ها مثل نام و عنوان در وسط */
       }
 
       .avatar {
-        margin-left: 0;
+        /* حذف margin-left: 0 برای بازگشت به حالت وسط‌چین پیش‌فرض (margin: 0 auto) */
+        margin: 0 auto 24px; 
       }
 
       .meta {
+        /* ترفند عالی: باکس اطلاعات تماس را کوچک کرده و در وسط قرار می‌دهد، 
+           اما متن‌های داخل آن برای زیبایی بیشتر همچنان چپ‌چین و تراز باقی می‌مانند */
+        width: fit-content;
+        margin: 18px auto 22px;
         text-align: left;
       }
 
       .actions {
-        justify-content: flex-start;
+        justify-content: center; /* وسط‌چین کردن دکمه دانلود رزومه */
       }
 
       .content h1 {
@@ -416,6 +421,7 @@
         grid-template-columns: 1fr;
       }
     }
+
 
     @media (max-width: 560px) {
       .page {
