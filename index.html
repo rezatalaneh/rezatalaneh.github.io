@@ -231,6 +231,17 @@
       margin: 0 0 16px;
       font-weight: 700;
       letter-spacing: -0.03em;
+            border-bottom: 1px solid var(--line);
+    }
+        .section h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 58px;
+      height: 2px;
+      background: var(--blue);
+      border-radius: 999px;
     }
 
     ul.clean {
