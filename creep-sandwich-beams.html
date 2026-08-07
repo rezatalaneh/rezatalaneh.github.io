@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>SMA Thick-Walled Cylinder | Reza Talaneh</title>
+  <title>Creep Sandwich Beams | Reza Talaneh</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -537,25 +537,25 @@
 
       <section class="content">
         <div class="project-label">
-          M.Sc. Thesis Project
+          B.Sc. Thesis Project
         </div>
 
-        <h1>Superelastic &amp; Shape-Memory Behavior of Thick-Walled SMA Cylinders</h1>
+        <h1>Time-Dependent Bending Response of a Composite Sandwich Beam with a Viscoelastic Core</h1>
 
         <p class="subtitle">
-          Analytical &amp; Finite Element Study of Ni-Ti Tubes under Internal Pressure and Combined Pressure-Torsion Loading
+          Finite Element Study of Creep Behavior under Sustained Loading Using ANSYS
         </p>
 
         <p class="project-meta">
-          Reza Talaneh &nbsp;|&nbsp; M.Sc. Thesis, 2016 &nbsp;|&nbsp;
+          Reza Talaneh &nbsp;|&nbsp; B.Sc. Thesis, Summer 2013  &nbsp;|&nbsp;
           Babol Noshirvani University of Technology<br>
-          Supervisor: Prof. R. A. Alashti &nbsp;•&nbsp; Advisor: Prof. A. Fathi
+          Supervisor: Prof. R. A. Alashti
         </p>
 
         <div class="top-actions">
           <a class="btn primary" href="SMA-Thick-Walled-Cylinder-Thesis.pdf" target="_blank" rel="noopener noreferrer">
             <i class="fa-solid fa-file-arrow-down"></i>
-            Download Full Thesis Report
+            Download Full Thesis Report (fa)
           </a>
 
           <a class="btn" href="index.html">
@@ -567,9 +567,7 @@
         <div class="section">
           <h2>Overview</h2>
           <p>
-            Shape memory alloys recover large strains through a reversible solid-state phase transformation and are widely used as actuators,
-            including in cylindrical torque-tube and pressure-vessel geometries. This thesis studied the superelastic and shape-memory behavior
-            of a <strong>thick-walled</strong> Ni-Ti cylinder, first under internal pressure alone, then under combined internal pressure and torsion.
+            Sandwich beams, consisting of thin, stiff skins bonded to a lightweight core, are widely used in aerospace, marine, and automotive structures. Because polymer-based cores can exhibit time-dependent (viscoelastic) behavior, this project studied the bending response of a sandwich beam with orthotropic graphite-epoxy skins and a viscoelastic polymer core under sustained loading, using the finite element software ANSYS.
           </p>
         </div>
 
@@ -577,87 +575,45 @@
           <h2>Approach</h2>
           <ul class="clean">
             <li>
-              Reduced the 3D Boyd-Lagoudas thermomechanical constitutive model to the plane-stress state governing the cylinder wall for each loading case.
+              Modeled the skins and core with 3D SOLID186 elements, assigning orthotropic elastic properties to the skins and an implicit Modified Time Hardening creep law to the core.
             </li>
             <li>
-              Derived the stress-based compatibility equation and discretized it with a finite-difference scheme, solving the resulting nonlinear algebraic system in MATLAB.
+              Solved the problem in two steps: an initial static response, followed by a long-duration creep analysis under sustained end loading (500 N and 1000 N), tracking displacement and strain over time.
             </li>
             <li>
-              Modeled both loading cases in Abaqus using 3D solid elements and an existing Fortran user-material subroutine for the SMA constitutive model as an independent check.
+              Reached this formulation after testing and ruling out several earlier element combinations (SHELL, and combined SHELL/PLANE/SOLID models), which failed to correctly transfer strain between the skins and the core.
             </li>
           </ul>
 
-          <div class="figure-grid">
-            <figure class="figure-card">
-              <img src="images/image3.png" alt="Thick-walled cylinder under combined pressure-torsion loading">
-              <figcaption class="figure-caption">
-                <strong>Fig. 1.</strong> Thick-walled cylinder under combined pressure-torsion loading.
-              </figcaption>
-            </figure>
-
-            <figure class="figure-card">
-              <img src="images/image6.png" alt="Finite-difference grid for the thick-walled cylinder under pressure">
-              <figcaption class="figure-caption">
-                <strong>Fig. 2.</strong> Finite-difference grid for the thick-walled cylinder under pressure.
-              </figcaption>
-            </figure>
-          </div>
+          <figure class="wide-figure">
+            <div class="wide-figure-images">
+              <img src="images/image10.png" alt="longitudinal creep strain at the end node">
+              <img src="images/image11.png" alt="Deformed sandwich beam">
+            </div>
+            <figcaption class="figure-caption">
+              <strong>Fig. 1.</strong> Deformed sandwich beam (right) and longitudinal creep strain at the end node as a function of the logarithm of time (left).
+            </figcaption>
+          </figure>
+          
         </div>
 
         <div class="section">
           <h2>Result</h2>
           <p>
-            For internal pressure alone, the finite-difference solution closely matched published solutions. For combined pressure-torsion loading,
-            for which no independent published solution was available, the finite-difference results closely matched the three-dimensional Abaqus simulations.
-            In both cases, the martensitic phase transformation was found to initiate at the inner radius and propagate outward with increasing load,
-            producing a corresponding redistribution of the radial, circumferential, and shear stresses across the wall. Superposed torsion was shown to alter
-            this stress and transformation pattern relative to the pure-pressure case.
+            Under sustained loading, both the tip displacement and the creep strain at the free end increased with time, consistent with the expected viscoelastic creep behavior of the polymer core. Results were recorded for load levels of 500 N and 1000 N over time scales spanning from near-instantaneous loading to long-term sustained loading.
           </p>
 
-          <figure class="wide-figure">
-            <div class="wide-figure-images">
-              <img src="images/image4.png" alt="Finite element contour of circumferential stress">
-              <img src="images/image5.png" alt="Comparison with literature results">
-            </div>
-            <figcaption class="figure-caption">
-              <strong>Fig. 3.</strong> Circumferential stress under internal pressure: FE contour and comparison with literature results.
-            </figcaption>
-          </figure>
 
-          <figure class="wide-figure">
-            <div class="wide-figure-images">
-              <img src="images/image1.png" alt="Abaqus result for circumferential stress under pressure-torsion">
-              <img src="images/image2.png" alt="Finite difference comparison under pressure-torsion">
-            </div>
-            <figcaption class="figure-caption">
-              <strong>Fig. 4.</strong> Circumferential stress comparison under combined pressure-torsion: Abaqus and finite difference.
-            </figcaption>
-          </figure>
         </div>
 
-        <div class="section">
-          <h2>Outlook</h2>
-          <p>
-            As one application, the thick-walled model was used to examine a self-locking SMA pipe coupling: an oversized SMA sleeve fitted over two steel pipe ends
-            recovers its residual strain on heating, generating contact pressure between the sleeve and the pipes that persists on subsequent cooling.
-            Building on this and the combined pressure-torsion results, the thesis outlines several directions for future work: extending the analysis to
-            plane-strain thick-walled cylinders; using the combined-loading results to study angular-misalignment effects and the design of SMA power-transmission
-            shaft couplings; applying the present method to other two-dimensional SMA problems such as beam bending and rotating disks; and examining residual stresses
-            under differing inner/outer radial displacement, as well as the dynamic response of the cylinder.
-          </p>
-        </div>
 
         <div class="section">
           <h2>Methods &amp; Tools</h2>
           <div class="methods">
-            <span class="badge">Boyd-Lagoudas Constitutive Model</span>
-            <span class="badge">MATLAB</span>
-            <span class="badge">Finite-Difference Solver</span>
-            <span class="badge">Abaqus</span>
-            <span class="badge">3D Finite Element Analysis</span>
-            <span class="badge">Fortran UMAT</span>
-            <span class="badge">Nonlinear Boundary Value Problems</span>
-            <span class="badge">Shape Memory Alloys</span>
+            <span class="badge">ANSYS (SOLID186, implicit creep formulation)</span>
+            <span class="badge">Orthotropic composite material modeling</span>
+            <span class="badge">Viscoelastic (creep) analysis</span>
+            <span class="badge">Finite Element Analysis</span>
           </div>
         </div>
 
